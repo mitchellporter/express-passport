@@ -24,6 +24,13 @@ router.get('/facebook/callback',
   passport.authenticate('facebook', { successRedirect: '/',
                                       failureRedirect: '/login' }));
 
+router.get('/slack', isAuthenticated, passport.authorize('slack'));
+router.get('/slack/callback', passport.authorize('slack', {
+  failureRedirect: '/'
+}), (req, res, next) => {
+  res.redirect('/');
+});
+
 function isAuthenticated(req, res, next) {
   if (req.isAuthenticated()) return next();
   res.redirect('/');

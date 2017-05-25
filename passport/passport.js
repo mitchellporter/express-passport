@@ -24,4 +24,5 @@ module.exports = (app) => {
   require('./strategies/local-login.strategy')();
   require('./strategies/local-signup.strategy')();
   require('./strategies/facebook.strategy')();
+  require('./strategies/slack.strategy')();
 }
