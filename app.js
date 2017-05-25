@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var facebook = require('./routes/facebook');
+var auth = require('./routes/auth');
 
 var app = express();
 
@@ -30,7 +30,7 @@ require('./passport/passport')(app);
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/auth', facebook);
+app.use('/auth', auth);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
