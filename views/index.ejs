@@ -59,6 +59,8 @@
     
     </div>
     
+    
+    <%if (isAuthenticated) { %>
     <div id="auth-links">
       <ul>
           <li><a href="/auth/facebook">Link your Facebook account.</a></li>
@@ -67,6 +69,9 @@
           <li><a href="/auth/jira">Link your Jira account.</a></li>
       </ul>
     </div>
+    <% } %>
+
+    
 
 
   </body>
