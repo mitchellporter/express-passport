@@ -7,11 +7,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-const User = require('./models/user');
-
 var index = require('./routes/index');
 var users = require('./routes/users');
 var auth = require('./routes/auth');
+
+var knex = require('knex')(require('./knexfile')[process.env.NODE_ENV || 'development']);
+require('objection').Model.knex(knex);
 
 var app = express();
 
