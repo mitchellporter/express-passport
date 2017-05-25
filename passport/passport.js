@@ -11,4 +11,7 @@ module.exports = (app) => {
   passport.deserializeUser((user, done) => {
     done(null, user);
   });
+
+  // strategies
+  require('./strategies/facebook.strategy')();
 }
