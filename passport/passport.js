@@ -21,6 +21,7 @@ module.exports = (app) => {
   });
 
   // strategies
-  require('./strategies/local.strategy')();
+  require('./strategies/local-login.strategy')();
+  require('./strategies/local-signup.strategy')();
   require('./strategies/facebook.strategy')();
 }
