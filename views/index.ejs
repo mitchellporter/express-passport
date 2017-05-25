@@ -3,12 +3,33 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+
+    #auth-links li {
+      list-style: none;
+    }
+    
+    #auth-links a {
+      color: green;
+    }
+    
+    </style>
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    
+    <div id="auth-links">
+      <ul>
+          <li><a href="/auth/facebook">Login with Facebook</a></li>
+          <li><a href="/auth/slack">Login with Slack</a></li>
+          <li><a href="/auth/trello">Login with Trello</a></li>
+          <li><a href="/auth/jira">Login with Jira</a></li>
+      </ul>
+    </div>
 
-    <a href="/auth/facebook">Login with Facebook</a>
+    
+
 
   </body>
 </html>
