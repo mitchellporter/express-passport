@@ -1,6 +1,12 @@
 const router = require('express').Router();
 const passport = require('passport');
 
+
+router.post('/login', passport.authenticate('local', { successRedirect: '/',
+                                   failureRedirect: '/login',
+                                   failureFlash: true }));
+
+
 // Redirect the user to Facebook for authentication.  When complete,
 // Facebook will redirect the user back to the application at
 //     /auth/facebook/callback
