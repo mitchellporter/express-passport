@@ -20,3 +20,5 @@ class Auth extends Model {
   }
 
 }
+
+module.exports = Auth;
