@@ -31,6 +31,11 @@ app.use(session({ secret: 'anything' }));
 
 require('./passport/passport')(app);
 
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.isAuthenticated();
+  next();
+});
+
 app.use('/', index);
 app.use('/users', users);
 app.use('/auth', auth);
