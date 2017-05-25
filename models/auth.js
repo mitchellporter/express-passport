@@ -12,8 +12,8 @@ class Auth extends Model {
         relation: Model.BelongsToOneRelation,
         modelClass: `${__dirname}/user`,
         join: {
-          from: 'Auth.user_id',
-          to: 'User.id'
+          from: 'auths.user_id',
+          to: 'users.id'
         }
       }
     };

@@ -13,8 +13,8 @@ class User extends Model {
         relation: Model.HasManyRelation,
         modelClass: `${__dirname}/auth`,
         join: {
-          from: 'User.id',
-          to: 'Auth.user_id'
+          from: 'users.id',
+          to: 'auths.user_id'
         }
       }
     };
